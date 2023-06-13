@@ -1,32 +1,49 @@
 {
-  "name": "HC_OFFICE_SUPPLIES",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^6",
-    "express": "^4",
-    "hdb": "^0.19.0",
-    "@sap/hdbext": "^7.3.1",
-    "sap-hdbext-promisfied": "^2.202108.1"
-  },
-  "devDependencies": {
-    "@sap/hdi-deploy": "4.6.1",
-    "sqlite3": "^5"
-  },
-  "scripts": {
-    "start": "cds-serve"
-  },
-  "cds": {
-    "hana": {
-      "deploy-format": "hdbtable"
+    "name": "HC_OFF_SUPPLIES",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+      "@sap/approuter": "^14.1.1",
+      "@sap/cds": "^6",
+      "@sap/hana-client": "^2.16.26",
+      "@sap/hdbext": "^7.7.4",
+      "sap-hdbext-promisfied": "^2.202108.1",
+      "@sap/xsenv": "^3.4.0",
+      "@sap/xssec": "^3.2.17",
+      "express": "^4",
+      "hdb": "^0.19.0",
+      "passport": "^0.6.0"
     },
-    "requires": {
-      "db": {
-        "kind": "sql"
+    "devDependencies": {
+      "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+      "@sap/hdi-deploy": "4.6.1",
+      "@sap/ux-specification": "^1.108.6",
+      "@sapui5/ts-types": "^1.92.2",
+      "eslint": "^7.32.0",
+      "sqlite3": "^5"
+    },
+    "scripts": {
+      "start": "cds-serve",
+      "watch-project1fiori8": "cds watch --open project1fiori8/webapp/index.html?sap-ui-xx-viewCache=false"
+    },
+    "cds": {
+      "hana": {
+        "deploy-format": "hdbtable"
+      },
+      "requires": {
+        "db": {
+          "kind": "hana"
+        },
+        "auth": {
+          "kind": "xsuaa"
+        }
       }
-    }
+    },
+    "sapux": [
+      "app/project1fiori8"
+    ]
   }
-}
+  
